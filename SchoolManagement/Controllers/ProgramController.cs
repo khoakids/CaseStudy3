@@ -73,7 +73,7 @@ namespace SchoolManagement.Controllers
             var programEdit = new UpdateProgram();
             return View(programEdit);
         }
-
+        [HttpGet]
         [Route("/Program/Delete/{id}")]
         public IActionResult Delete(int id)
         {

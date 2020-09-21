@@ -14,6 +14,7 @@ namespace SchoolManagement.Models
         public int MajorId { get; set; }
         public int CourseId { get; set; }
         public int SubjectId { get; set; }
+        public string ClassName { get; set; }
 
         public virtual Courses Course { get; set; }
         public virtual Majors Major { get; set; }

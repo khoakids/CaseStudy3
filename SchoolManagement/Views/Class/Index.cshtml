@@ -1,0 +1,41 @@
+﻿@model List<ViewClass>
+
+@{
+    ViewBag.Title = "Class List";
+}
+
+<div class="text-center">
+    <h3 class="display">DANH SÁCH LỚP HỌC</h3>
+    <table id="tbStaffs" class="table table-bordered table-hover table-primary">
+        <thead class="thead-dark">
+            <tr>
+                <th>#ID</th>
+                <th>Tên lớp học</th>
+                <th>Tên khoa</th>
+                <th>Tên khóa học</th>
+                <th>Tên môn học</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var classes in Model)
+            {
+                <tr>
+                    <td>@classes.ClassId</td>
+                    <td>@classes.ClassName</td>
+                    <td>@classes.MajorName</td>
+                    <td>@classes.CourseId</td>
+                    <td>@classes.SubjectName</td>
+                    <td>
+                        <a asp-controller="Class" asp-action="Edit" asp-route-id="@classes.ClassId" class="text-danger"><i class="fas fa-edit"></i></a>
+                        <a href="javascript:void(0)" class="text-danger" onclick="classes.delete(@classes.ClassId)"><i class="fas fa-trash"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section Scripts{
+    <script src="~/lib/bootbox/bootbox.min.js"></script>
+    <script src="~/js/class.js" asp-append-version="true"></script>
+}

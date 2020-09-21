@@ -41,11 +41,11 @@ namespace SchoolManagement.Repository
         public IEnumerable<ViewProgram> GetPrograms()
         {
             IEnumerable<ViewProgram> programs = new List<ViewProgram>();
-            programs = (from m in context.Programs
+            programs = (from p in context.Programs
                         select (new ViewProgram()
                         {
-                            ProgramId = m.ProgramId,
-                            ProgramName = m.ProgramName
+                            ProgramId = p.ProgramId,
+                            ProgramName = p.ProgramName
                         }));
             return programs;
         }

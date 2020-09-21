@@ -79,8 +79,8 @@ namespace SchoolManagement.Controllers
             var staffEdit = new UpdateMajor();
             return View(staffEdit);
         }
-
-        [Route("/Program/Delete/{id}")]
+        [HttpGet]
+        [Route("/Major/Delete/{id}")]
         public IActionResult Delete(int id)
         {
             var deleteResult = majorRepository.DeleteMajor(id);

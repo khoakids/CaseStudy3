@@ -1,0 +1,33 @@
+﻿@model UpdateSubject
+
+@{ 
+    ViewBag.Title = "Update Subject";
+}
+
+<div>
+    <h1>CẬP NHẬT THÔNG TIN MÔN HỌC</h1>
+    <form asp-controller="Subject" asp-action="Edit" method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <fieldset>
+            <legend>Thông tin chương trình</legend>
+            <div class="row form-group">
+                <label asp-for="SubjectName" class="col-2"></label>
+                <div class="col-10">
+                    <input type="hidden" asp-for="SubjectId" class="form-control" autocomplete="off" />
+                    <input asp-for="SubjectName" class="form-control" autocomplete="off" />
+                    <span asp-validation-for="SubjectName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row form-group">
+                <label asp-for="MajorId" class="col-2"></label>
+                <div class="col-10">
+                    <select asp-for="MajorId" asp-items="@(new SelectList(Model.Major.ToList(), "MajorId", "MajorName"))" class="custom-select"></select>
+                </div>
+            </div>
+        </fieldset>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Cập nhật</button>
+            <a asp-controller="Subject" asp-action="Index" class="btn btn-primary">Hủy</a>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,38 @@
+﻿@model List<ViewSubject>
+
+@{
+    ViewBag.Title = "Subject List";
+}
+
+<div class="text-center">
+    <h3 class="display">DANH SÁCH MÔN HỌC</h3>
+    <table id="tbStaffs" class="table table-bordered table-hover table-primary">
+        <thead class="thead-dark">
+            <tr>
+                <th>#ID</th>
+                <th>Tên môn học</th>
+                <th>Tên khoa</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var subject in Model)
+            {
+            <tr>
+                <td>@subject.SubjectId</td>
+                <td>@subject.SubjectName</td>
+                <td>@subject.MajorName</td>
+                <td>
+                    <a asp-controller="Subject" asp-action="Edit" asp-route-id="@subject.SubjectId" class="text-danger"><i class="fas fa-edit"></i></a>
+                    <a href="javascript:void(0)" class="text-danger" onclick="subject.delete(@subject.SubjectId)"><i class="fas fa-trash"></i></a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+@section Scripts{
+    <script src="~/lib/bootbox/bootbox.min.js"></script>
+    <script src="~/js/subject.js" asp-append-version="true"></script>
+}

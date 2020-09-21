@@ -1,0 +1,35 @@
+﻿@model UpdateCourse
+
+@{
+    ViewBag.Title = "Update Course";
+}
+
+<div>
+    <h1>CẬP NHẬT THÔNG TIN KHÓA HỌC</h1>
+    <form asp-controller="Course" asp-action="Edit" method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <fieldset>
+            <legend>Thông tin khóa học</legend>
+            <input type="hidden" asp-for="CourseId" class="form-control" autocomplete="off" />
+            <div class="row form-group">
+                <label asp-for="StartDay" class="col-2"></label>
+                <div class="col-10">
+                    <input asp-for="StartDay" class="form-control" autocomplete="off" />
+                    <span asp-validation-for="StartDay" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row form-group">
+                <label asp-for="FinishDay" class="col-2"></label>
+                <div class="col-10">
+                    <input asp-for="FinishDay" class="form-control" autocomplete="off" />
+                    <span asp-validation-for="FinishDay" class="text-danger"></span>
+                </div>
+            </div>
+        </fieldset>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Cập nhật</button>
+            <a asp-controller="Course" asp-action="Index" class="btn btn-primary">Hủy</a>
+        </div>
+    </form>
+</div>
+
