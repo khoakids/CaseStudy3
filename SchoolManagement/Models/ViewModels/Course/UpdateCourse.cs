@@ -10,6 +10,9 @@ namespace SchoolManagement.Models.ViewModels.Course
     {
         public int CourseId { get; set; }
         [Required(ErrorMessage = "Đây là trường bắt buộc")]
+        [Display(Name = "Tên khóa học")]
+        public string CourseName { get; set; }
+        [Required(ErrorMessage = "Đây là trường bắt buộc")]
         [Display(Name = "Ngày bắt đầu")]
         public DateTime? StartDay { get; set; }
         [Required(ErrorMessage = "Đây là trường bắt buộc")]

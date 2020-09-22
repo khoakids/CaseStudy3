@@ -8,6 +8,7 @@ namespace SchoolManagement.Models.ViewModels.Course
     public class ViewCourse
     {
         public int CourseId { get; set; }
+        public string CourseName { get; set; }
         public DateTime? StartDay { get; set; }
         public DateTime? FinishDay { get; set; }
     }

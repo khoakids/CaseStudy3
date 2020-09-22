@@ -1,0 +1,45 @@
+﻿@model List<ViewStudent>
+
+@{
+    ViewBag.Title = "Student List";
+}
+
+<div class="text-center">
+    <h3 class="display">DANH SÁCH HỌC SINH</h3>
+    <table id="tbStaffs" class="table table-bordered table-hover table-primary">
+        <thead class="thead-dark">
+            <tr>
+                <th>#ID</th>
+                <th>Tên học sinh</th>
+                <th>Ngày sinh</th>
+                <th>Tên lớp học</th>
+                <th>Số điện thoại</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var students in Model)
+            {
+                <tr>
+                    <td>@students.StudentId</td>
+                    <td>@students.StudentName</td>
+                    <td>@students.Birthday</td>
+                    <td>@students.ClassName</td>
+                    <td>@students.PhoneNumber</td>
+                    <td>@students.Email</td>
+                    <td>
+                        <a asp-controller="Student" asp-action="Edit" asp-route-id="@students.StudentId" class="text-danger"><i class="fas fa-edit"></i></a>
+
+                        <a href="javascript:void(0)" class="text-danger" onclick="students.delete(@students.StudentId)"><i class="fas fa-trash"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section Scripts{
+    <script src="~/lib/bootbox/bootbox.min.js"></script>
+    <script src="~/js/student.js" asp-append-version="true"></script>
+
+}

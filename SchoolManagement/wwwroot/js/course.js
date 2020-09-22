@@ -21,6 +21,7 @@ course.delete = function (id) {
                     success: function (data) {
                         if (data.deleteCourse > 0) {
                             window.location.href = "/Course/Index";
+                            alert("Xóa thành công");
                         }
                     }
                 });

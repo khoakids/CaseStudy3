@@ -21,6 +21,7 @@ major.delete = function (id) {
                     success: function (data) {
                         if (data.deleteResult > 0) {
                             window.location.href = "/Major/Index";
+                            alert("Xóa thành công");
                         }
                     }
                 });

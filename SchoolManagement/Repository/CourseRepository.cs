@@ -45,6 +45,7 @@ namespace SchoolManagement.Repository
                       select (new ViewCourse()
                       {
                           CourseId = c.CourseId,
+                          CourseName = c.CourseName,
                           StartDay = c.StartDay,
                           FinishDay = c.FinishDay
                       }));
@@ -59,6 +60,7 @@ namespace SchoolManagement.Repository
                 return -1;
             }
             course.CourseId = model.CourseId;
+            course.CourseName = model.CourseName;
             course.StartDay = model.StartDay;
             course.FinishDay = model.FinishDay;
 

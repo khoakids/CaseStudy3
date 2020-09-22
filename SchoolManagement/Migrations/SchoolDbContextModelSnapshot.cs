@@ -55,6 +55,9 @@ namespace SchoolManagement.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("CourseName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime?>("FinishDay")
                         .HasColumnType("date");
 
@@ -228,12 +231,14 @@ namespace SchoolManagement.Migrations
                         .WithMany("Classes")
                         .HasForeignKey("CourseId")
                         .HasConstraintName("FK__Classes__CourseI__2B3F6F97")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("SchoolManagement.Models.Majors", "Major")
                         .WithMany("Classes")
                         .HasForeignKey("MajorId")
                         .HasConstraintName("FK__Classes__MajorId__2A4B4B5E")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 

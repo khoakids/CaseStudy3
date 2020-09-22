@@ -21,6 +21,7 @@ subject.delete = function (id) {
                     success: function (data) {
                         if (data.deleteSubject > 0) {
                             window.location.href = "/Subject/Index";
+                            alert("Xóa thành công");
                         }
                     }
                 });

@@ -9,7 +9,8 @@
     <table id="tbStaffs" class="table table-bordered table-hover table-primary">
         <thead class="thead-dark">
             <tr>
-                <th>#Khóa học</th>
+                <th>#ID</th>
+                <th>Tên khóa học</th>
                 <th>Ngày bắt đầu</th>
                 <th>Ngày kết thúc</th>
             </tr>
@@ -19,6 +20,7 @@
             {
                 <tr>
                     <td>@course.CourseId</td>
+                    <td>@course.CourseName</td>
                     <td>@course.StartDay</td>
                     <td>@course.FinishDay</td>
                     <td>

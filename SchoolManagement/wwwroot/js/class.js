@@ -21,6 +21,7 @@ classes.delete = function (id) {
                     success: function (data) {
                         if (data.deleteClass > 0) {
                             window.location.href = "/Class/Index";
+                            alert("Xóa thành công");
                         }
                     }
                 });

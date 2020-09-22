@@ -33,6 +33,7 @@ namespace SchoolManagement.Controllers
             {
                 var course = new Courses()
                 {
+                    CourseName = model.CourseName,
                     StartDay = model.StartDay,
                     FinishDay = model.FinishDay
                 };
@@ -55,6 +56,7 @@ namespace SchoolManagement.Controllers
             if (course != null)
             {
                 editCourse.CourseId = course.CourseId;
+                editCourse.CourseName = course.CourseName;
                 editCourse.StartDay = course.StartDay;
                 editCourse.FinishDay = course.FinishDay;
             }

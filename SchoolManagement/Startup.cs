@@ -32,6 +32,7 @@ namespace SchoolManagement
             services.AddScoped<ICourseRepository, CourseRepository>();
             services.AddScoped<ISubjectRepository, SubjectRepository>();
             services.AddScoped<IClassRepository, ClassRepository>();
+            services.AddScoped<IStudentRepository, StudentRepository>();
             services.AddDbContext<SchoolDbContext>(o => o.UseSqlServer(Configuration.GetConnectionString("SchoolDbConnection")));
         }
 

@@ -39,13 +39,13 @@ namespace SchoolManagement.Models
                 entity.HasOne(d => d.Course)
                     .WithMany(p => p.Classes)
                     .HasForeignKey(d => d.CourseId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK__Classes__CourseI__2B3F6F97");
 
                 entity.HasOne(d => d.Major)
                     .WithMany(p => p.Classes)
                     .HasForeignKey(d => d.MajorId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK__Classes__MajorId__2A4B4B5E");
             });
 

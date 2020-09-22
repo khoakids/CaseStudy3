@@ -21,6 +21,7 @@ program.delete = function (id) {
                     success: function (data) {
                         if (data.deleteProgram > 0) {
                             window.location.href = "/Program/Index";
+                            alert("Xóa thành công");
                         }
                     }
                 });
